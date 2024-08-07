@@ -1,6 +1,7 @@
 package aula6.outros;
 
 import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
 
 public enum Calculadora2Enum {
 	SOMA("Soma", (v1, v2) -> v1 + v2),
@@ -9,9 +10,13 @@ public enum Calculadora2Enum {
 	DIVISAO("Divisão", (v1, v2) -> v1 / v2);
 
 	private String nomeAmigavel;
-	private BiFunction<Integer, Integer, Integer> calculo;
+	
+	//Optei por utilizar BinaryOperator por ser uma especialização
+	//de BiFunction que pode ser utilizada quando os parâmetros
+	//e o resultado possuem o mesmo tipo.
+	private BinaryOperator<Integer> calculo;
 
-	private Calculadora2Enum(String nomeAmigavel, BiFunction<Integer, Integer, Integer> calculo) {
+	private Calculadora2Enum(String nomeAmigavel, BinaryOperator<Integer> calculo) {
 		this.nomeAmigavel = nomeAmigavel;
 		this.calculo = calculo;
 	}
