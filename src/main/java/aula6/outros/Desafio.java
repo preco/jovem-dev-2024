@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
 public class Desafio {
 
 	public static void main(String[] args) {
+		
 		List<Evento> lista = new ArrayList<>();
 		lista.add(new Evento("Futebol", LocalDateTime.of(2024, 8, 6, 12, 0, 0), TipoEventoEnum.LAZER));
 		

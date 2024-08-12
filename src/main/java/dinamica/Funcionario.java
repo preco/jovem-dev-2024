@@ -35,4 +35,9 @@ public class Funcionario {
 	public void setSalario(BigDecimal salario) {
 		this.salario = salario;
 	}
+	
+	@Override
+	public String toString() {
+		return String.format("Nome: %s, Cargo: %s, Salario: %s]", nome, cargo, salario);
+	}
 }
